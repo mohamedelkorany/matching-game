@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game</title>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        background: url(multi\ media/1.gif) no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+      }
+      .gameContainer {
+        background: rgba(0, 78, 146, 0.48);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 30px  ;
+        backdrop-filter: blur(5px);
+        border: 1px solid #ffffffb9;
+        width: auto;
+        max-width: 450px;
+      }
+      #timer{
+        font-weight: bold;
+        font-size: 18px;
+        color: rgb(211, 3, 3);
+      }
+      #restart{
+        background-color: rgb(99, 97, 97);
+        color: red;
+        border-radius: 10px;
+        font-size: 18px;
+        padding: 12px 20px;
+        margin-top: 15px;
+      }
+      #restart:hover{
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        background-color: rgb(68, 68, 68);
+
+      }
+      
+      .grid{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .card{
+        width: 80px;
+        height: 80px;
+        background: #004e92  ;
+        display: flex ;
+        color: transparent ;
+        border-radius: 10px ;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+        cursor: pointer;
+        align-items: center ;
+        justify-content: center;
+        font-size: 30px;
+        transition: transform 0.5s background 0.3s;
+      }
+      
+      .card:hover{
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        transform: scale(1.05);
+
+      }
+
+     .card.flipped{
+        background: #e0e559;
+        color: #fff;
+        transform: rotateY(180deg);
+        
+     }
+     .card.match{
+      background: #4cef50;
+      color: #fff;
+      pointer-events: none;
+      box-shadow: 0 0 15px rgba(76, 239, 79, 0.824);
+
+
+
+
+     }
+
+    </style>
+  </head>
+  <body>
+    <div class="gameContainer">
+      <h1>Welcome at the game</h1>
+      <p>Timer : <span id="timer">00:00</span></p>
+      <button id="restart">Restart</button>
+      <div class="grid"></div>
+      <audio src=""></audio>
+      <audio src=""></audio>
+    </div>
+    <script src="gameScript.js"></script>
+  </body>
+</html>

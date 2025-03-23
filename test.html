@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matching Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        background: url("img/1.gif"),linear-gradient(135deg, #000428, #004e92)
+           no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .game-container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        width: 90%;
+        max-width: 450px;
+      }
+
+      h1 {
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 18px;
+        margin: 5px 0 20px;
+      }
+
+      #timer {
+        font-weight: bold;
+        font-size: 20px;
+        color: #ff6600;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .card {
+        width: 80px;
+        height: 80px;
+        background: #1e1e1e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        color: transparent;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: transform 0.5s, background 0.3s;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+      }
+
+      .card.flipped {
+        background: #ff6600;
+        color: #fff;
+        transform: rotateY(180deg);
+      }
+
+      .card.matched {
+        background: #4caf50;
+        color: #fff;
+        pointer-events: none;
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.8);
+      }
+
+      #restart {
+        background: #ff6600;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        margin-top: 15px;
+        cursor: pointer;
+        font-size: 18px;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+
+      #restart:hover {
+        background: #ff4500;
+        box-shadow: 0 0 15px rgba(255, 102, 0, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>🔥 Matching Game 🔥</h1>
+      <p>⏳ Time: <span id="timer">00:00</span></p>
+      <button id="restart">🔄 Restart</button>
+      <div class="grid"></div>
+    </div>
+    <audio id="match-sound" src="img/1.wav"></audio>
+    <audio id="mismatch-sound" src="img/2.mp3"></audio>
+    <script src="js/level1.js"></script>
+  </body>
+</html>
